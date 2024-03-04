@@ -1567,6 +1567,8 @@
 	.container {
 	    max-width: 540px;
 	}
+
+	
 	.sidebar .widget:last-child{margin-bottom: 20px;}
 	.header-inner > p{width: 100%;}
 	.big-font > span {
