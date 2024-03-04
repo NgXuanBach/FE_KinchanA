@@ -1567,7 +1567,6 @@
 	.container {
 	    max-width: 540px;
 	}
-
 	
 	.sidebar .widget:last-child{margin-bottom: 20px;}
 	.header-inner > p{width: 100%;}
@@ -1833,6 +1832,14 @@
 
 
 @media screen and (max-width: 480px) {
+	.left,
+	.right,
+	.widget-title,
+	.profile-controls,
+	.wavy-wraper{
+		display: none;
+	}
+
 	.sidebar .widget ul.recent-photos li > a, 
 	.sidebar .widget ul.recent-photos li > a img {
 	    display: inline-block;
