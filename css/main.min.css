@@ -24109,8 +24109,8 @@ a.badge-dark:focus {
 
 .alert-warning {
     color: #856404;
-    background-color: #fff3cd;
-    border-color: #ffeeba
+    background-color: #ffe8a1;
+    /* border-color: #ffeeba */
 }
 
 .alert-warning hr {

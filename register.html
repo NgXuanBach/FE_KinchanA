@@ -2,28 +2,48 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
 	<title>Welcom To KinchaNa</title>
-    <link rel="icon" href="images/Logo-kinchana.png" type="image/png" sizes="16x16"> 
-    
-    <link rel="stylesheet" href="css/main.min.css">
+	<link rel="icon" href="images/Logo-kinchana.png" type="image/png" sizes="16x16">
+
+	<link rel="stylesheet" href="css/main.min.css">
 	<link rel="stylesheet" href="css/weather-icon.css">
 	<link rel="stylesheet" href="css/weather-icons.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/color.css">
-    <link rel="stylesheet" href="css/responsive.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/color.css">
+	<link rel="stylesheet" href="css/responsive.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<style>
+		.criteria {
+			list-style-type: none;
+		}
 
+		.criteria li {
+			margin: 5px 0;
+		}
+
+		.valid::before {
+			content: '✔ ';
+			color: green;
+		}
+
+		.invalid::before {
+			content: '✘ ';
+			color: red;
+		}
+	</style>
 </head>
+
 <body>
 
-<div class="theme-layout">
-	
-	<div class="postoverlay"></div>
-	
-	<!-- <div class="responsive-header">
+	<div class="theme-layout">
+
+		<div class="postoverlay"></div>
+
+		<!-- <div class="responsive-header">
 		<div class="mh-head first Sticky">
 			<span class="mh-btns-left">
 				<a class="" href="#menu"><i class="fa fa-align-justify"></i></a>
@@ -41,105 +61,135 @@
 		
 		
 	</div> -->
-	<!-- responsive header -->
-	
-	<div class="topbar stick">
-		<div class="logo">
-			<a title="" href="newsfeed.html"><img src="images/Logo-kinchana.png" alt=""></a>
-		</div>
-		
-		<div class="top-area">
-			<div class="top-search">
-				<form method="post" class="">
-					<input type="text" placeholder="Search People, Pages, Groups etc">
-					<button data-ripple><i class="ti-search"></i></button>
-				</form>
-			</div>
-			<div class="page-name">
-			    <span>register</span>
-			</div>
-			<ul class="setting-area">
-				<li><a data-ripple="" title="Home" href="newsfeed.html"><i class="fa fa-home"></i></a></li>
-				<li><a href="#" title="Languages" data-ripple=""><i class="fa fa-globe"></i><em>EN</em></a>
-					<div class="dropdowns languages">
-						<div class="col-lg-12">
-							<ul class="dropdown-meganav-select-list-lang">
-								<li>
-								<a href="#">
-									<img title="Image Title" alt="Image Alternative text" src="images/flags/UK.png">English(UK)
-								</a>
-								</li>
-								<li>
-									<a href="#">
-									<img title="Image Title" alt="Image Alternative text" src="images/flags/NAM.png">Tiếng Việt
-									</a>
-								</li>
+		<!-- responsive header -->
 
+		<div class="topbar stick">
+			<div class="logo">
+				<a title="" href="newsfeed.html"><img src="images/Logo-kinchana.png" alt=""></a>
+			</div>
+
+			<div class="top-area">
+				<div class="top-search">
+					<form method="post" class="">
+						<input type="text" placeholder="Search People, Pages, Groups etc">
+						<button data-ripple><i class="ti-search"></i></button>
+					</form>
+				</div>
+				<div class="page-name">
+					<span>register</span>
+				</div>
+				<ul class="setting-area">
+					<li><a data-ripple="" title="Home" href="newsfeed.html"><i class="fa fa-home"></i></a></li>
+					<li><a href="#" title="Languages" data-ripple=""><i class="fa fa-globe"></i><em>EN</em></a>
+						<div class="dropdowns languages">
+							<div class="col-lg-12">
+								<ul class="dropdown-meganav-select-list-lang">
+									<li>
+										<a href="#">
+											<img title="Image Title" alt="Image Alternative text"
+												src="images/flags/UK.png">English(UK)
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<img title="Image Title" alt="Image Alternative text"
+												src="images/flags/NAM.png">Tiếng Việt
+										</a>
+									</li>
+
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li><a href="#" title="Help" data-ripple=""><i class="fa fa-question-circle"></i></a>
+						<div class="dropdowns helps">
+							<span>Quick Help</span>
+							<form method="post">
+								<input type="text" placeholder="How can we help you?">
+							</form>
+							<span>Help with this page</span>
+							<ul class="help-drop">
+								<li><a href="#" title=""><i class="fa fa-book"></i>Terms and Conditions</a></li>
+								<li><a href="#" title=""><i class="fa fa-question-circle-o"></i>FAQs</a></li>
+								<li><a href="#" title=""><i class="fa fa-building-o"></i>Carrers</a></li>
+								<li><a href="#" title=""><i class="fa fa-map-marker"></i>Contact</a></li>
+								<li><a href="#" title=""><i class="fa fa-pencil-square-o"></i>Privacy Policy</a></li>
+								<li><a href="#" title=""><i class="fa fa-exclamation-triangle"></i>Report a Problem</a>
+								</li>
 							</ul>
 						</div>
-					</div>
-				</li>
-				<li><a href="#" title="Help" data-ripple=""><i class="fa fa-question-circle"></i></a>
-					<div class="dropdowns helps">
-						<span>Quick Help</span>
-						<form method="post">
-							<input type="text" placeholder="How can we help you?">
-						</form>
-						<span>Help with this page</span>
-						<ul class="help-drop">
-							<li><a href="#" title=""><i class="fa fa-book"></i>Terms and Conditions</a></li>
-							<li><a href="#" title=""><i class="fa fa-question-circle-o"></i>FAQs</a></li>
-							<li><a href="#" title=""><i class="fa fa-building-o"></i>Carrers</a></li>
-							<li><a href="#" title=""><i class="fa fa-map-marker"></i>Contact</a></li>
-							<li><a href="#" title=""><i class="fa fa-pencil-square-o"></i>Privacy Policy</a></li>
-							<li><a href="#" title=""><i class="fa fa-exclamation-triangle"></i>Report a Problem</a></li>
-						</ul>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div><!-- topbar -->
-		
-	
-	<section>
-		<div class="gap gray-bg">
-			<div class="container">
-                <div class=" col-lg-12">
-                    <div class="col-lg-12 col-md-12">
-                        <div class="">
-                            <h1>Sign Up</h1>
-                            <p>Please fill in this form to create an account.</p>
-                            <div class="logout-form">
-                                <form method="post" class="again-login">
-                                    <label style="margin-bottom: 0px;" for="name"><b>Your Name</b></label>
-                                    <input type="text" placeholder="Your Name"> 
-
-                                    <label style="margin-bottom: 0px;"  for="pwd"><b>Password</b></label>
-                                    <input type="password" placeholder="Password">
-
-                                    <label style="margin-bottom: 0px;"  for="psw-repeat"><b>Repeat Password</b></label>
-                                    <input type="password" placeholder="Repeat Password">
-
-                                    <button type="submit"><a href="index.html">Submit</a></button>
-                                </form>
-                                <h6>You have a account.<a href="logout.html" style="padding-left: 10px; color: #fa6342;">Sign in</a></h6>
-                                <p>By clicking Sign Up, you agree to our <a href="#" title="">Terms & Policy</a>. You may receive SMS notifications from us and can opt out at any time.</p>
-                            </div>	
-                        </div>	
-                    </div>
-                </div>
+					</li>
+				</ul>
 			</div>
-		</div>
-	</section>
-
-</div>
-	
-
-	
-	
+		</div><!-- topbar -->
+		<section>
+			<div class="gap gray-bg">
+				<div class="container">
+					<div class=" col-lg-12">
+						<div class="col-lg-12 col-md-12">
+							<div class="">
+								<h1>Sign Up</h1>
+								<p>Please fill in this form to create an account.</p>
+								<div class="logout-form">
+									<form action="#" class="again-login">
+										<label style="margin-bottom: 0px;" for="name"><b>Your Name</b></label>
+										<input id="username" type="text" placeholder="Your Name">
+										<div id="username-warning" class="d-none alert alert-warning m-0" role="alert">
+											Đây là cảnh báo!
+										</div>
+										<label style="margin-bottom: 0px;" for="name"><b>Email</b></label>
+										<input id="email" type="email" placeholder="Your Email">
+										<div id="email-warning" class="d-none alert alert-warning m-0" role="alert">
+											Đây là cảnh báo!
+										</div>
+										<label style="margin-bottom: 0px;" for="password"><b>Password</b></label>
+										<input id="password" type="password" placeholder="Password">
+										<ul class="criteria">
+											<li id="length" class="invalid">Ít nhất 8 kí tự</li>
+											<li id="uppercase" class="invalid">Chứa kí tự viết hoa</li>
+											<li id="specialchar" class="invalid">Chứa kí tự đặc biệt</li>
+										</ul>
+										<div id="pass-warning" class="d-none alert alert-warning m-0" role="alert">
+											Đây là cảnh báo!
+										</div>
+										<label style="margin-bottom: 0px;" for="psw-repeat"><b>Repeat
+												Password</b></label>
+										<input id="confirmPass" type="password" placeholder="Repeat Password">
+										<div id="confirmPass-warning" class="d-none alert alert-warning m-0"
+											role="alert">
+											Đây là cảnh báo!
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" id="alternateAddressCheckbox"
+												type="checkbox">
+											<label class="form-check-label" for="alternateAddressCheckbox">I agree to
+												the
+												KINCHANA’s TERMS OF USE and PRIVACY POLICY</label>
+										</div>
+										<div id="alternateAddressCheckbox-warning"
+											class="d-none alert alert-warning m-0" role="alert">
+											Đây là cảnh báo!
+										</div>
+										<button id="btn-submit"><a>REGISTER</a></button>
+										<div id="submit-warning" class="d-none alert alert-warning mt-2" role="alert">
+											Đây là cảnh báo!
+										</div>
+									</form>
+									<h6>You have a account.<a href="logout.html"
+											style="padding-left: 10px; color: #fa6342;">Sign in</a></h6>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
 	<script src="js/main.min.js"></script>
-	<script src="js/script.js"></script>
+	<script src="jsofpage/register.js"></script>
+	<!-- <script src="js/script.js"></script> -->
 	<script src="https://kit.fontawesome.com/bdfcdd3133.js" crossorigin="anonymous"></script>
-</body>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/6.0.0/bootbox.js"></script>
+</body>
 
 </html>
