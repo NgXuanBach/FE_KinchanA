@@ -40,7 +40,7 @@
 					<div class="mm-navbar"><a class="mm-title">Menu</a></div>
 					<ul class="mm-listview " id="click-show">
 						<li>
-							<a href="newsfeed.html" title=""><i class="fa-solid fa-calendar"></i> News feed</a>
+							<a href="index.html" title=""><i class="fa-solid fa-calendar"></i> News feed</a>
 						</li>
 						<li>
 							<a href="timeline.html" title=""><i class="fa-solid fa-user"></i> My Profile</a>
@@ -64,22 +64,22 @@
 							<a href="setting.html" title=""><i class="fa-solid fa-gear"></i> Account setting</a>
 						</li>
 						<li>
-							<a href="logout.html" title=""><i class="fa-solid fa-power-off"></i> Log out</a>
+							<a onclick="logout()" title=""><i class="fa-solid fa-power-off"></i> Log out</a>
 						</li>
 					</ul>
 				</div>
-				
+
 			</div>
 
 		</nav>
-		
+
 		<div class="responsive-header ">
 			<div class="mh-head first Sticky">
 				<span class="mh-btns-left">
 					<a class="" href="#menu"><i class="fa fa-align-justify"></i></a>
 				</span>
 				<span class="mh-text">
-					<a href="newsfeed.html" title=""><img src="images/Logo-kinchana.png" alt=""></a>
+					<a href="index.html" title=""><img src="images/Logo-kinchana.png" alt=""></a>
 				</span>
 			</div>
 			<div class="mh-head second">
@@ -109,7 +109,7 @@
 					<span>Newsfeed</span>
 				</div>
 				<ul class="setting-area">
-					<li><a href="newsfeed.html" title="Home" data-ripple=""><i class="fa fa-home"></i></a></li>
+					<li><a href="index.html" title="Home" data-ripple=""><i class="fa fa-home"></i></a></li>
 					<li>
 						<a href="#" title="Friend Requests" data-ripple="">
 							<i class="fa fa-user"></i><em class="bg-red">5</em>
@@ -410,7 +410,7 @@
 					</li>
 				</ul>
 				<div class="user-img" style="margin-right: 15px;">
-					<h5>Jack Carter</h5>
+					<h5 id="username">Jack Carter</h5>
 					<img src="images/resources/admin.jpg" alt="">
 					<div class="user-setting">
 						<span class="seting-title">User setting <a href="#" title="">see all</a></span>
@@ -418,7 +418,7 @@
 							<li><a href="timeline.html" title=""><i class="ti-user"></i> View profile</a></li>
 							<li><a href="about.html" title=""><i class="ti-pencil-alt"></i> Edit profile</a></li>
 							<li><a href="setting.html" title=""><i class="ti-settings"></i> Account setting</a></li>
-							<li><a href="logout.html" title=""><i class="ti-power-off"></i> Log out</a></li>
+							<li><a onclick="logout()" title=""><i class="ti-power-off"></i> Log out</a></li>
 						</ul>
 					</div>
 				</div>
@@ -448,7 +448,7 @@
 											<ul class="naves">
 												<li>
 													<i class="fa-solid fa-calendar"></i>
-													<a href="newsfeed.html" title="">News feed</a>
+													<a href="index.html" title="">News feed</a>
 												</li>
 												<li>
 													<i class="fa-solid fa-user"></i>
@@ -840,7 +840,8 @@
 																</li>
 																<li>
 																	<div class="likes heart" title="Like/Dislike">❤
-																		<span>2K</span></div>
+																		<span>2K</span>
+																	</div>
 																</li>
 																<li>
 																	<span class="comment" title="Comments">
@@ -1050,7 +1051,8 @@
 																</li>
 																<li>
 																	<div class="likes heart" title="Like/Dislike">❤
-																		<span>2K</span></div>
+																		<span>2K</span>
+																	</div>
 																</li>
 																<li>
 																	<span class="comment" title="Comments">
@@ -1237,7 +1239,8 @@
 																</li>
 																<li>
 																	<div class="likes heart" title="Like/Dislike">❤
-																		<span>2K</span></div>
+																		<span>2K</span>
+																	</div>
 																</li>
 																<li>
 																	<span class="comment" title="Comments">
@@ -1432,7 +1435,8 @@
 																</li>
 																<li>
 																	<div class="likes heart" title="Like/Dislike">❤
-																		<span>2K</span></div>
+																		<span>2K</span>
+																	</div>
 																</li>
 																<li>
 																	<span class="comment" title="Comments">
@@ -1617,7 +1621,8 @@
 																</li>
 																<li>
 																	<div class="likes heart" title="Like/Dislike">❤
-																		<span>2K</span></div>
+																		<span>2K</span>
+																	</div>
 																</li>
 																<li>
 																	<span class="comment" title="Comments">
@@ -1809,7 +1814,8 @@
 																</li>
 																<li>
 																	<div class="likes heart" title="Like/Dislike">❤
-																		<span>2K</span></div>
+																		<span>2K</span>
+																	</div>
 																</li>
 																<li>
 																	<span class="comment" title="Comments">
@@ -1848,7 +1854,7 @@
 															</div>
 														</div>
 													</div>
-													<div class="coment-area" >
+													<div class="coment-area">
 														<ul class="we-comet">
 															<li>
 																<div class="comet-avatar">
@@ -2018,7 +2024,8 @@
 																</li>
 																<li>
 																	<div class="likes heart" title="Like/Dislike">❤
-																		<span>2K</span></div>
+																		<span>2K</span>
+																	</div>
 																</li>
 																<li>
 																	<span class="comment" title="Comments">
@@ -2057,7 +2064,7 @@
 															</div>
 														</div>
 													</div>
-													<div class="coment-area" >
+													<div class="coment-area">
 														<ul class="we-comet">
 															<li>
 																<div class="comet-avatar">
@@ -2150,60 +2157,14 @@
 
 									<div class="stick-widget-right">
 										<aside class="sidebar static right">
-											<div class="widget ">
-												<h4 class="widget-title" style="margin-bottom: 0;">Your page</h4>
-												<div class="your-page" style="padding: 0 20px;">
-													<figure>
-														<a href="#" title=""><img
-																src="images/resources/friend-avatar9.jpg" alt=""></a>
-													</figure>
-													<div class="page-meta">
-														<a href="#" title="" class="underline">My Creative Page</a>
-														<span><i class="ti-comment"></i><a href="insight.html"
-																title="">Messages <em>9</em></a></span>
-														<span><i class="ti-bell"></i><a href="insight.html"
-																title="">Notifications <em>2</em></a></span>
-													</div>
-													<ul class="page-publishes">
-														<li>
-															<span><i
-																	class="fa-solid fa-pen-to-square"></i>Publish</span>
-														</li>
-														<li>
-															<span><i class="fa-solid fa-camera"></i>Photo</span>
-														</li>
-														<li>
-															<span><i class="fa-solid fa-video"></i>Live</span>
-														</li>
-														<li>
-															<span><i class="fa-solid fa-user-plus"></i>Invite</span>
-														</li>
-													</ul>
-													<div class="page-likes">
-														<ul class="nav nav-tabs likes-btn">
-															<li class="nav-item"><a class="active" href="#link1"
-																	data-toggle="tab" data-ripple="">likes</a></li>
-															<li class="nav-item"><a class="" href="#link2"
-																	data-toggle="tab" data-ripple="">views</a></li>
-														</ul>
-														<!-- Tab panes -->
-														<div class="tab-content">
-															<div class="tab-pane active fade show " id="link1">
-																<span><i class="ti-heart"></i>884</span>
-																<a href="#" title="weekly-likes">35 new likes this
-																	week</a>
-
-															</div>
-															<div class="tab-pane fade" id="link2">
-																<span><i class="fa fa-eye"></i>440</span>
-																<a href="#" title="weekly-likes">440 new views this
-																	week</a>
-
-															</div>
-														</div>
-													</div>
+											<div class="widget">
+												<h4 class="widget-title" style="margin-bottom: 0;">Hình ảnh thú vị</h4>
+												<div class="interesting-image" style="padding: 20px; text-align: center;">
+												<!-- Thay thế 'path-to-your-image.jpg' bằng đường dẫn thực tế của hình ảnh bạn muốn hiển thị -->
+												<img src="images/users/bachdeptrai.jpeg" alt="Mô tả hình ảnh" style="max-width: 100%; height: auto;">
 												</div>
-											</div><!-- page like widget -->
+												</div>
+											<!-- page like widget -->
 
 											<div class="widget ">
 												<h4 class="widget-title" style="margin-bottom: 10px;">Friends chat <a
@@ -2212,9 +2173,9 @@
 													<div id="fr-scr">
 														<ul class="chat-users followers" style="padding: 15px;">
 															<li id="hand">
-																<div class="author-thmb" >
+																<div class="author-thmb">
 																	<figure>
-																		<img src="images/resources/side-friend5.jpg" >
+																		<img src="images/resources/side-friend5.jpg">
 																	</figure>
 																	<span class="status f-online"></span>Nguyễn Xuân
 																	Bách
@@ -2223,31 +2184,34 @@
 															<li id="hand">
 																<div class="author-thmb">
 																	<figure>
-																		<img src="images/resources/side-friend6.jpg" >
+																		<img src="images/resources/side-friend6.jpg">
 																	</figure>
-																	<span class="status f-online"></span>Nguyễn Xuân Bách
+																	<span class="status f-online"></span>Nguyễn Xuân
+																	Bách
 																</div>
 															</li>
 															<li id="hand">
 																<div class="author-thmb">
 																	<figure>
-																		<img src="images/resources/side-friend7.jpg" >
+																		<img src="images/resources/side-friend7.jpg">
 																	</figure>
-																	<span class="status f-offline"></span>Nguyễn Xuân Bách
+																	<span class="status f-offline"></span>Nguyễn Xuân
+																	Bách
 																</div>
 															</li>
 															<li id="hand">
 																<div class="author-thmb">
 																	<figure>
-																		<img src="images/resources/side-friend8.jpg" >
+																		<img src="images/resources/side-friend8.jpg">
 																	</figure>
-																	<span class="status f-online"></span>Nguyễn Xuân Bách
+																	<span class="status f-online"></span>Nguyễn Xuân
+																	Bách
 																</div>
 															</li>
 															<li id="hand">
 																<div class="author-thmb">
 																	<figure>
-																		<img src="images/resources/side-friend9.jpg" >
+																		<img src="images/resources/side-friend9.jpg">
 																	</figure>
 																	<span class="status f-away"></span>Nguyễn Xuân Bách
 																</div>
@@ -2255,9 +2219,10 @@
 															<li id="hand">
 																<div class="author-thmb">
 																	<figure>
-																		<img src="images/resources/side-friend10.jpg" >
+																		<img src="images/resources/side-friend10.jpg">
 																	</figure>
-																	<span class="status f-online"></span>Nguyễn Xuân Bách
+																	<span class="status f-online"></span>Nguyễn Xuân
+																	Bách
 																</div>
 															</li>
 														</ul>
@@ -2743,6 +2708,8 @@
 	<script src="js/script.js"></script>
 
 	<script src="https://kit.fontawesome.com/bdfcdd3133.js" crossorigin="anonymous"></script>
+
+	<script src="jsofpage/allpage.js"></script>
 </body>
 
 

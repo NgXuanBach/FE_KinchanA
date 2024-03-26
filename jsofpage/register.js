@@ -122,7 +122,7 @@ $(document).ready(function () {
                                 closeButton: false
                             });
                             setTimeout(function () {
-                                window.location.href = 'logout.html';
+                                window.location.href = 'login.html';
                             }, 2000);
                         } else if (response.statusCode == 500) {
                             submitWarning.text(response.message)
