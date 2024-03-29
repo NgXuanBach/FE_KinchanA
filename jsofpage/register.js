@@ -53,30 +53,6 @@ $(document).ready(function () {
             usernameWarning.addClass("d-none")
 
         }
-        // catch exception password
-        // let passwordWarning = $("#pass-warning")
-        // if (password == "") {
-        //     formIsValue = false;
-        //     passwordWarning.text("The password is not empty!")
-        //     passwordWarning.removeClass("d-none")
-        // } else if (password.length < 8) {
-        //     formIsValue = false;
-        //     passwordWarning.text("The password must have at least 8 characters.")
-        //     passwordWarning.removeClass("d-none")
-        // } else if (!isSpecialCharacter(password)) {
-        //     // The username must not have special characters.
-        //     formIsValue = false;
-        //     passwordWarning.text("The password must have special characters.")
-        //     passwordWarning.removeClass("d-none")
-        // } else if (isWhitespace(username)) {
-        //     formIsValue = false;
-        //     passwordWarning.text("The password must not have white space characters.")
-        //     passwordWarning.removeClass("d-none")
-        // }
-        // else {
-        //     passwordWarning.addClass("d-none")
-
-        // }
 
         // catch exception confirm-password
         let confirmPasswordWarning = $("#confirmPass-warning")
