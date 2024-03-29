@@ -14,6 +14,7 @@ $(document).ready(function () {
             if (response.statusCode == 200) {
                 user = response.data;
                 $('#username').text(user.name);
+                localStorage.setItem("id",user.id);
             } else {
                 console.log("check response user/getuserbytoken:", response);
             }
