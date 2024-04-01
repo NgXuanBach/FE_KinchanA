@@ -289,7 +289,7 @@
 					<a href="#" title="Messages" data-ripple=""><i class="fa fa-commenting"></i><em class="bg-blue">9</em></a>
 					<div class="dropdowns">
 						<span>5 New Messages <a href="#" title="">Mark all as read</a></span>
-						<ul class="drops-menu">
+						<ul id="drop-messages" class="drops-menu">
 							<li>
 								<a class="show-mesg" href="#" title="">
 									<figure>
@@ -419,7 +419,7 @@
 	<div class="chat-box">
 		<div class="chat-head">
 			<span class="status f-online"></span>
-			<h6>Bucky Barnes</h6>
+			<h6 id="message-name">Bucky Barnes</h6>
 			<div class="more">
 				<div class="more-optns"><i class="ti-more-alt"></i>
 					<ul>
@@ -433,7 +433,7 @@
 			</div>
 		</div>
 		<div class="chat-list">
-			<ul>
+			<ul id="message-box">
 				<li class="me">
 					<div class="chat-thumb"><img
 							src="images/resources/chatlist1.jpg" alt="">
@@ -594,43 +594,37 @@
 									<span class="create-post">Personal Info</span>
 									<div class="personal-head">
 										<span class="f-title"><i class="fa fa-user"></i> About Me:</span>
-										<p>
+										<p id="about-me">
 											Hi, I’m John Carter, I’m 36 and I work as a Digital Designer for the “dewwater” Agency in Ontario, Canada
 										</p>
 										<span class="f-title"><i class="fa fa-birthday-cake"></i> Birthday:</span>
-										<p>
+										<p id="birth-day">
 											December 17, 1985 
 										</p>
 										<span class="f-title"><i class="fa fa-phone"></i> Phone Number:</span>
-										<p>
-											+1-989-232435234 
+										<p id="phone-number">
+											+84....
 										</p>
-										<span class="f-title"><i class="fa fa-medkit"></i> Blood group:</span>
+										<!-- <span class="f-title"><i class="fa fa-medkit"></i> Blood group:</span>
 										<p>
 											B+
-										</p>
+										</p> -->
 										<span class="f-title"><i class="fa fa-male"></i> Gender:</span>
-										<p>
+										<p id="sex">
 											Male 
 										</p>
-										<span class="f-title"><i class="fa fa-globe"></i> Country:</span>
-										<p>
+										<span class="f-title"><i class="fa fa-globe"></i> Address:</span>
+										<p id="address">
 											San Francisco, California, USA 
 										</p>
-										<span class="f-title"><i class="fa fa-briefcase"></i> Occupation:</span>
-										<p>
+										<!-- <span class="f-title"><i class="fa fa-briefcase"></i> Occupation:</span>
+										<p id="job">
 											UI/UX Designer 
-										</p>
+										</p> -->
 										<span class="f-title"><i class="fa fa-handshake-o"></i> Joined:</span>
-										<p>
+										<p id="joined">
 											December 20, 2001  
-										</p>
-										
-										<span class="f-title"><i class="fa fa-envelope"></i> Email & Website:</span>
-										<p>
-											<a href="wpkixx.html" title="">www.wpkixx.com</a> <a href="http://wpkixx.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ebbb829f858280ab92849e99868a8287c5888486">[email&#160;protected]</a> 
-										</p>
-										
+										</p>						
 									</div>
 								</div>
 								</aside>	
@@ -642,32 +636,32 @@
 										<div class="col-lg-6">
 											<div class="gen-metabox">
 												<span><i class="fa fa-puzzle-piece"></i> Hobbies</span>
-												<p>
+												<p id="hobbies">
 													I like to ride the bicycle, swimming, and working out. I also like reading design magazines, and searching on internet, and also binge watching a good hollywood Movies while it’s raining outside.
 												</p>
 											</div>
-											<div class="gen-metabox">
+											<!-- <div class="gen-metabox">
 												<span><i class="fa fa-plus"></i> Others Interests</span>
-												<p>
+												<p >
 													Swimming, Surfing, Uber Diving, Anime, Photography, Tattoos, Street Art.
 												</p>
-											</div>
+											</div> -->
 										</div>
 										<div class="col-lg-6">
-											<div class="gen-metabox">
+											<!-- <div class="gen-metabox">
 												<span><i class="fa fa-mortar-board"></i> Education</span>
-												<p>
+												<p id="education">
 													Master of computer science, sixteen years degree From <a href="#" title="">Oxford Uniersity, London</a>
 												</p>
-											</div>
+											</div> -->
 											<div class="gen-metabox">
 												<span><i class="fa fa-certificate"></i> Work and experience</span>
-												<p>
+												<p id="job">
 													Currently working in the "color hands" web development agency from the last 5 five years as <a href="#" title="">Senior UI/UX Designer</a>
 												</p>
 											</div>
 										</div>
-										<div class="col-lg-6">
+										<!-- <div class="col-lg-6">
 											<div class="gen-metabox no-margin">
 												<span><i class="fa fa-sitemap"></i> Social Networks</span>
 												<ul class="sociaz-media">
@@ -678,13 +672,13 @@
 													
 												</ul>
 											</div>
-										</div>
+										</div> -->
 										
 									</div>	
 								</div>
 								
 								<div class="central-meta">
-									<span class="create-post">Friend's (320) <a href="timeline-friends2.html" title="">See All</a></span>
+									<span class="create-post">Friend's (320) <a href="timeline-friends.html" title="">See All</a></span>
 									<ul class="frndz-list">
 										<li>
 											<img src="images/resources/recent1.jpg" alt="">
@@ -933,9 +927,11 @@
 		</div>	
 	</section><!-- content -->
 </div>	
-	<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.min.js"></script>
-	<script src="js/script.js"></script>
+	<!-- <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
+	<script src="js/main.min.js"></script>
+	<script src="jsofpage/about.js"></script>
 	<script src="jsofpage/allpage.js"></script>
+	<script src="js/script.js"></script>
 	<script src="https://kit.fontawesome.com/bdfcdd3133.js" crossorigin="anonymous"></script>
 </body>	
 
