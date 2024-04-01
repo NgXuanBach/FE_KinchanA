@@ -244,7 +244,7 @@ $('.user-img').on('click', function() {
 
 	
 //--- side message box	
-	$('.friends-chat > li, .chat-users > li, .drops-menu > li > a.show-mesg').on('click', function() {
+	$('.friends-chat > li, .chat-users > li, .drops-menu > li ').on('click', function() {
 		$('.chat-box').addClass("show");
 		return false;
 	});	
