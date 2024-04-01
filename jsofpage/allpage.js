@@ -50,6 +50,9 @@ $(document).ready(function () {
                 </li>`
                 })
                 dropMessages.innerHTML = messsages;
+            } else {
+                dropMessages.innerHTML = "<span style='padding-left: 100px;' >No one messages here</span>";
+                console.log("check response usermessage/getbysender:", response);
             }
         }
 
@@ -98,6 +101,8 @@ $(document).ready(function () {
                     recipientMessageList.forEach(function (obj) {
                         obj.role = 'me';
                     });
+                } else {
+                    console.log("check response usermessage/getbysenderandrecipient:", response);
                 }
             }
         })
@@ -135,11 +140,57 @@ $(document).ready(function () {
             })
             messageBox.innerHTML = messageContent;
         } else {
-            messageBox.innerHTML = `<li style = "text-align: center">Have a nice chat</li>`      
+            messageBox.innerHTML = `<li style = "text-align: center">Have a nice chat</li>`
         }
-        console.log(messageList);
+        $("#btn-submit").click(function (event) {
+            event.preventDefault()
+            let messageText = $("#message-text").val();
+            let currentTime = new Date().toISOString().slice(0, 19);
+            let messageObj = {
+                content: messageText,
+                timestamp: currentTime
+            };
+            $.ajax({
+                method: "POST",
+                url: "http://localhost:8080/usermessage/sendmessage",
+                headers: { Authorization: bearerToken },
+                contentType: "application/json",
+                data: JSON.stringify({
+                    messageResponse: messageObj,
+                    senderId: userId,
+                    recipientId: friendMessageId,
+                }),
+            }).done(function (response) {
+                if (response != "" && response != null) {
+                    if (response.statusCode == 200 && response.data == true) {
+                        $("#message-text").val("");
+                        let parts = currentTime.split('T');
+                        date = parts[0];
+                        time = parts[1];
+                        showMessage(messageText, date, time);
+
+                    }
+                }
+            })
+        })
     })
 })
+function showMessage( message, date, time) {
+    $("#message-box").append(
+        `<li class="you">
+                <div class="chat-thumb"><img
+                        src="images/resources/chatlist1.jpg" alt="">
+                </div>
+                <div class="notification-event">
+                    <span class="chat-message-item">
+                        ${message}
+                    </span>
+                    <span class="notification-date"><time
+                            datetime="2004-07-24T18:18"
+                            class="entry-date updated">${compareDateTime(date) + ' at ' + convertTimeFormat(time)}</time></span>
+                </div>
+            </li>`);
+}
 function logout() {
     localStorage.clear();
     window.location.href = "/login.html"
