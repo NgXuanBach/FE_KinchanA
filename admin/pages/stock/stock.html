@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Boutique Admin</title>
+    <title>KinchanA Admin</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
@@ -19,7 +19,9 @@
     <!-- Layout styles -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+    <link rel="shortcut icon" href="Logo-kinchana.png" sizes="16x16">
+    
+    <script src="https://kit.fontawesome.com/bdfcdd3133.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -27,8 +29,8 @@
         <!-- partial:../../partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-                <a class="sidebar-brand brand-logo" href="../../index.html"><img src="../../assets/images/boutique2.jpg" style="width: 70%; height: 100%;" alt="logo" /></a>
-                <a class="sidebar-brand brand-logo-mini" href="../../index.html"><img src="../../assets/images/b.jpg" alt="logo" /></a>
+                <a class="sidebar-brand brand-logo" href="index.html"><img src="Logo-kinchana.png" style="width: 70%;height: 100%;" alt="logo" /></a>
+                <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="Logo-kinchana.png" alt="logo" /></a>
             </div>
             <ul class="nav">
                 <li class="nav-item profile">
@@ -55,20 +57,13 @@
                         <span class="menu-title">Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-item menu-items">
-                    <a class="nav-link" href="../../pages/category/category.html">
-                        <span class="menu-icon">
-                            <i class="mdi mdi-table-large"></i>
-                        </span>
-                        <span class="menu-title">Category</span>
-                    </a>
-                </li>
+                
                 <li class="nav-item menu-items">
                     <a class="nav-link" href="../../pages/stock/stock.html">
                         <span class="menu-icon">
                             <i class="mdi mdi-table-large"></i>
                         </span>
-                        <span class="menu-title">Stock</span>
+                        <span class="menu-title">Status</span>
                     </a>
                 </li>
                 <li class="nav-item menu-items">
@@ -87,14 +82,7 @@
                         <span class="menu-title">User</span>
                     </a>
                 </li>
-                <li class="nav-item menu-items">
-                    <a class="nav-link" href="../product/product.html">
-                        <span class="menu-icon">
-                            <i class="mdi mdi-table-large"></i>
-                        </span>
-                        <span class="menu-title">Product</span>
-                    </a>
-                </li>
+                
             </ul>
         </nav>
         <!-- partial -->
@@ -163,11 +151,11 @@
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="page-header">
-                        <h3 class="page-title"> Stock </h3>
+                        <h3 class="page-title"> Status </h3>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Stock</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Stock elements</li>
+                                <li class="breadcrumb-item"><a href="#">Status</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Status elements</li>
                             </ol>
                         </nav>
                     </div>
@@ -182,13 +170,13 @@
                 font-size: 30px;
                 color: white;
                 cursor: pointer;">&times;</button>
-                                <h4 class="card-title">Stock form</h4>
+                                <h4 class="card-title">Status form</h4>
                                 <form id="form" class="forms-sample">
                                     <div class="form-group">
-                                        <label for="stockId">ID</label>
+                                        <label for="StatusId">Status ID</label>
                                         <input type="text" class="form-control" id="stockid" placeholder="ID" style="color: black;" disabled>
                                     </div>
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <label for="exampleInputEmail3">ColorID</label>
                                         <div class="card">
                                             <div class="form-group">
@@ -196,9 +184,9 @@
                                                 </select>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="form-group">
-                                        <label for="exampleInputEmail3">ProductID</label>
+                                        <label for="exampleInputEmail3">UserID</label>
 
                                         <div class="card">
                                             <div class="form-group">
@@ -215,8 +203,8 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="exampleInputPassword4">Price</label>
-                                        <input type="text" class="form-control" id="price" placeholder="Price">
+                                        <label for="exampleInputPassword4">Active Status</label>
+                                        <input type="text" class="form-control" id="price" placeholder="Posted">
                                     </div>
                                     <div class="form-group">
                                         <label>File upload</label>
@@ -238,8 +226,14 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <h4 class="card-title">Stock table</h4>
-                                <button class="showFormButton btn btn-primary mr-2">Create</button>
+                                <h4 class="card-title">Status table</h4>
+
+                                <!-- The form -->
+                                <form >
+                                    <input type="text" placeholder="Input StatusID" style="border: 1px solid; border-radius: 5px;">
+                                    <button type="submit" style="border: 1px solid; background-color: #0090e7; border-radius: 5px;"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                </form>
+                                <!-- <button class="showFormButton btn btn-primary mr-2">Create</button> -->
 
                                 </p>
                                 <div class="table-responsive">
@@ -247,15 +241,27 @@
                                         <thead>
                                             <tr>
                                                 <th> # </th>
-                                                <th> ColorID </th>
+                                                <th> StatusID </th>
                                                 <th> Quantity </th>
-                                                <th> ProductID </th>
-                                                <th> Price </th>
+                                                <th> UserID </th>
+                                                <th> Active Status </th>
                                                 <th>Image</th>
                                                 <th> </th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="list-color">
+                                            <tr>
+                                                <td> 1 </td>
+                                                <td> 123 </td>
+                                                <td> 1 </td>
+                                                <td> 123 </td>
+                                                <td> Posted </td>
+                                                <td>  </td>
+                                                <td>
+                                                    <button type="submit" class="showFormButton btn btn-primary mr-2">Edit</button>
+                                                    <button type="submit" class="btn btn-primary mr-2">Delete</button>
+                                                </td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -267,8 +273,7 @@
                 <!-- partial:../../partials/_footer.html -->
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Boutique
-                            2023. All Right Reseverd</span>
+                        
                     </div>
                 </footer>
                 <!-- partial -->
@@ -300,7 +305,6 @@
     <script src="../../js/stock.js"></script>
     <script src="/admin/js/filter-admin.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/6.0.0/bootbox.js"></script>
-
 
     <!-- End custom js for this page -->
 </body>

@@ -694,6 +694,8 @@ iframe {
 }
 
 
+
+
 /*--- sticky header ---*/
 
 header.stick {
@@ -20678,3 +20680,5 @@ table.adition tbody tr td {
 .modal {
     z-index: 999999 !important;
 }
+
+
