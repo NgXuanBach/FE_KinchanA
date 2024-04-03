@@ -416,8 +416,8 @@
 					<div class="user-setting">
 						<span class="seting-title">User setting <a href="#" title="">see all</a></span>
 						<ul class="log-out">
-							<li><a href="timeline.html" title=""><i class="ti-user"></i> View profile</a></li>
-							<li><a href="about.html" title=""><i class="ti-pencil-alt"></i> Edit profile</a></li>
+							<li><a id="viewprofile" href="timeline.html" title=""><i class="ti-user"></i> View profile</a></li>
+							<li><a id="editprofile" href="about.html" title=""><i class="ti-pencil-alt"></i> Edit profile</a></li>
 							<li><a href="setting.html" title=""><i class="ti-settings"></i> Account setting</a></li>
 							<li><a onclick="logout()" title=""><i class="ti-power-off"></i> Log out</a></li>
 						</ul>
@@ -463,10 +463,7 @@
 													<i class="fa-regular fa-images"></i>
 													<a href="timeline-photos.html" title="">Images</a>
 												</li>
-												<li>
-													<i class="fa-solid fa-message"></i>
-													<a href="chat-messenger.html" title="">Messages</a>
-												</li>
+												
 												<li>
 													<i class="fa-solid fa-bell"></i>
 													<a href="notifications.html" title="">Notifications</a>
@@ -2313,29 +2310,7 @@
 						<textarea placeholder="Write Message"></textarea>
 						<button type="submit" class="main-btn">Send</button>
 					</form>
-					<div class="add-smiles">
-						<div class="uploadimage">
-							<i class="fa fa-image"></i>
-							<label class="fileContainer">
-								<input type="file">
-							</label>
-						</div>
-						<span title="add icon" class="em em-expressionless"></span>
-						<div class="smiles-bunch">
-							<i class="em em---1"></i>
-							<i class="em em-smiley"></i>
-							<i class="em em-anguished"></i>
-							<i class="em em-laughing"></i>
-							<i class="em em-angry"></i>
-							<i class="em em-astonished"></i>
-							<i class="em em-blush"></i>
-							<i class="em em-disappointed"></i>
-							<i class="em em-worried"></i>
-							<i class="em em-kissing_heart"></i>
-							<i class="em em-rage"></i>
-							<i class="em em-stuck_out_tongue"></i>
-						</div>
-					</div>
+					
 
 				</div>
 			</div>
@@ -2510,7 +2485,9 @@
 		</div>
 	</div><!-- The Scrolling Modal image with comment -->
 
-	<script src="js/main.min.js"></script>
+		<script src="js/main.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/6.0.0/bootbox.js"></script>
  	<script src="js/toast-notificatons.js"></script>
 	<!-- <script src="../../../cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script> -->
 	<!-- For timeline slide show -->

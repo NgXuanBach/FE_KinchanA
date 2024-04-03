@@ -519,10 +519,10 @@
 										<div class="edit-pp">
 											<label class="fileContainer">
 												<i class="fa fa-camera"></i>
-												<input type="file">
+												<input id="fileCoverImageInput" type="file">
 											</label>
 										</div>
-										<img src="images/resources/profile-image.jpg" alt="">
+										<img id="coverImage" src="images/resources/profile-image.jpg" alt="">
 										<ul class="profile-controls">
 											<li><a href="#" title="Add friend" data-toggle="tooltip"><i
 														class="fa fa-user-plus"></i></a></li>
@@ -555,7 +555,7 @@
 											<div class="col-lg-2 col-md-3">
 												<div class="profile-author">
 													<div class="profile-author-thumb">
-														<img alt="author" src="images/resources/author.jpg">
+														<img id="avatar" alt="author" src="images/Userimages/noprofile.jpeg">
 														<div class="edit-dp">
 															<label class="fileContainer">
 																<i class="fa fa-camera"></i>
@@ -565,7 +565,7 @@
 													</div>
 
 													<div class="author-content">
-														<a class="h4 author-name" href="about.html">Jack Carter</a>
+														<a class="h4 author-name" href="#">Jack Carter</a>
 														<div class="country">Ontario, CA</div>
 													</div>
 												</div>
@@ -584,14 +584,12 @@
 													<li>
 														<a class="" href="timeline-photos.html">Photos</a>
 													</li>
-													<li>
-														<a class="" href="timeline-videos.html">Videos</a>
-													</li>
+													
 												</ul>
 												<ol class="folw-detail">
-													<li><span>Posts</span><ins>101</ins></li>
-													<li><span>Followers</span><ins>1.3K</ins></li>
-													<li><span>Following</span><ins>22</ins></li>
+													<li><span>Posts</span><ins id="posts">101</ins></li>
+												<li><span>Followers</span><ins id="followers">1.3K</ins></li>
+												<li><span>Following</span><ins id="following">22</ins></li>
 												</ol>
 											</div>
 										</div>
@@ -1034,7 +1032,9 @@
 	</div>
 
 
-	<script src="js/main.min.js"></script>
+		<script src="js/main.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/6.0.0/bootbox.js"></script>
 	<script src="jsofpage/allpage.js"></script>
 	<script src="jsofpage/randomImage.js"></script>
 	<script src="js/script.js"></script>

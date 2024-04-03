@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    let username;
     let bearerToken = "Bearer " + localStorage.getItem("token");
     $.ajax({
         method: "GET",
@@ -13,7 +12,24 @@ $(document).ready(function () {
         if (response != "" && response != null) {
             if (response.statusCode == 200) {
                 user = response.data;
-                $('#username').text(user.name);
+                document.querySelector(".user-img").innerHTML = `
+					<h5 id="username">${user.name}</h5>
+					<img id = "avatar-dropdowns" src="images/Userimages/${user.avatar}" alt="">
+					<div class="user-setting">
+						<span class="seting-title">User setting <a href="#" title="">see all</a></span>
+						<ul class="log-out">
+							<li><a href="about.html?username=${user.username}" title=""><i class="ti-user"></i> view profile</a></li>
+							<li><a href="timeline.html?username=${user.username}" title=""><i class="ti-pencil-alt"></i>edit profile</a></li>
+							<li><a href="setting.html?username=${user.username}" title=""><i class="ti-settings"></i>account setting</a></li>
+							<li><a onclick="logout()" title=""><i class="ti-power-off"></i>log out</a></li>
+						</ul>
+					</div>
+                `
+                $("#avatar-dropdowns").css({
+                    maxWidth: 45,
+                    maxHeight: 45,
+                    // objectFit: 'contain'
+                });
                 localStorage.setItem("id", user.id);
             } else {
                 console.log("check response user/getuserbytoken:", response);
@@ -62,10 +78,12 @@ $(document).ready(function () {
         let recipientMessageList;
         let messageList;
         let friendMessageId = $(this).attr("friend-message-id");
+        console.log("friendmessageid ", friendMessageId)
         let messageBox = document.getElementById("message-box");
         var li = $(e.target).closest('li');
         var username = li.find('.user-name').text();
         $('#message-name').text(username);
+        $("#message-text").val("");
         $.ajax({
             method: "GET",
             url: "http://localhost:8080/usermessage/getbysenderandrecipient",
@@ -101,8 +119,6 @@ $(document).ready(function () {
                     recipientMessageList.forEach(function (obj) {
                         obj.role = 'me';
                     });
-                } else {
-                    console.log("check response usermessage/getbysenderandrecipient:", response);
                 }
             }
         })
@@ -142,40 +158,57 @@ $(document).ready(function () {
         } else {
             messageBox.innerHTML = `<li style = "text-align: center">Have a nice chat</li>`
         }
-        $("#btn-submit").click(function (event) {
-            event.preventDefault()
-            let messageText = $("#message-text").val();
-            let currentTime = new Date().toISOString().slice(0, 19);
-            let messageObj = {
-                content: messageText,
-                timestamp: currentTime
-            };
-            $.ajax({
-                method: "POST",
-                url: "http://localhost:8080/usermessage/sendmessage",
-                headers: { Authorization: bearerToken },
-                contentType: "application/json",
-                data: JSON.stringify({
-                    messageResponse: messageObj,
-                    senderId: userId,
-                    recipientId: friendMessageId,
-                }),
-            }).done(function (response) {
-                if (response != "" && response != null) {
-                    if (response.statusCode == 200 && response.data == true) {
-                        $("#message-text").val("");
-                        let parts = currentTime.split('T');
-                        date = parts[0];
-                        time = parts[1];
-                        showMessage(messageText, date, time);
+        const chatBoxOpen = localStorage.getItem('chatBoxOpen') === 'true';
 
-                    }
+        $("#btn-submit").click(function (event) {
+            event.preventDefault();
+
+            // Identify the active chatbox based on the clicked button
+            const clickedButton = $(this);
+            const chatBox = clickedButton.closest('.chat-box'); // Adjust selector if needed
+
+            // Check if the clicked button belongs to an open chatbox
+            if (chatBox.hasClass('show')) {
+                const messageText = $("#message-text").val();
+                console.log(friendMessageId)
+                if (messageText != "" && messageText != null) {
+                    const currentTime = new Date().toISOString().slice(0, 19);
+                    const messageObj = {
+                        content: messageText,
+                        timestamp: currentTime
+                    };
+                    $.ajax({
+                        method: "POST",
+                        url: "http://localhost:8080/usermessage/sendmessage",
+                        headers: { Authorization: bearerToken },
+                        contentType: "application/json",
+                        data: JSON.stringify({
+                            messageResponse: messageObj,
+                            senderId: userId,
+                            recipientId: friendMessageId,
+                        }),
+                    }).done(function (response) {
+                        if (response != "" && response != null) {
+                            if (response.statusCode == 200 && response.data == true) {
+                                $("#message-text").val("");
+                                const parts = currentTime.split('T');
+                                const date = parts[0];
+                                const time = parts[1];
+                                showMessage(messageText, date, time);
+                            }
+                        }
+                    });
                 }
-            })
-        })
+            } else {
+                // Handle the case where the button isn't associated with an open chatbox (optional)
+                console.log("Submit button not associated with an open chatbox");
+            }
+
+            // console.log("click send message from chatbox:", chatBox.length ? chatBox.attr('id') : 'none'); // Log the ID of the active chatbox or 'none' if not open
+        });
     })
 })
-function showMessage( message, date, time) {
+function showMessage(message, date, time) {
     $("#message-box").append(
         `<li class="you">
                 <div class="chat-thumb"><img

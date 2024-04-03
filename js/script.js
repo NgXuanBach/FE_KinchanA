@@ -244,14 +244,30 @@ jQuery(document).ready(function ($) {
 
 	//--- side message box	
 	$('.friends-chat > li, .chat-users > li, .drops-menu > li ').on('click', function () {
-		$('.chat-box').addClass("show");
-		return false;
+		// Ẩn chat box khác
+		$('.chat-box').removeClass('show');
+
+		// Xóa sự kiện click của chat box cũ
+		$('.chat-box').off('click');
+		// Hiển thị chat box
+		$('.chat-box').addClass('show');
+
+
+		// Bắt sự kiện click cho chat box mới
+		$(this).on('click', function (event) {
+			event.stopPropagation(); // Ngăn chặn sự kiện click lan truyền
+		});
 	});
 	$('.close-mesage').on('click', function () {
-		$('.chat-box').removeClass("show");
-		return false;
+		closeChatBox('.chat-box.show');
 	});
+	function closeChatBox(chatBoxElement) {
+		// Xác định element chat box
+		const chatBox = $(chatBoxElement);
 
+		// Ẩn chat box
+		chatBox.removeClass('show');
+	}
 	//------ scrollbar plugin
 	if ($.isFunction($.fn.perfectScrollbar)) {
 		$('.dropdowns, .twiter-feed, .invition, .followers, .chatting-area, .peoples, #people-list, .chat-list > ul, .message-list, .chat-users, .left-menu, .sugestd-photo-caro, .popup.events, .related-tube-psts, .music-list, .more-songs, .media > ul, .conversations, .msg-pepl-list, .menu-slide, .frnds-stories, .modal-body .we-comet').perfectScrollbar();

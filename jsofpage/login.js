@@ -3,8 +3,6 @@ $(document).ready(function () {
         event.preventDefault()
         var email = $("#email").val();
         var password = $("#password").val();
-        console.log("email", email)
-        console.log("pass", password)
         let roleId = 0;
         $.ajax({
             method: "POST",

@@ -1,13 +1,14 @@
 $(document).ready(function () {
-    let username;
+    var urlParams = new URLSearchParams(window.location.search);
+    const username = urlParams.get("username");
     let bearerToken = "Bearer " + localStorage.getItem("token");
     $.ajax({
         method: "GET",
-        url: "http://localhost:8080/user/getuserbytoken",
+        url: "http://localhost:8080/user/getuserbyusername",
         headers: { Authorization: bearerToken },
         async: false,
         data: {
-            token: localStorage.getItem("token"),
+            username: username,
         },
     }).done(function (response) {
         if (response != "" && response != null) {
@@ -28,29 +29,34 @@ $(document).ready(function () {
     });
     $.ajax({
         method: "GET",
-        url: "http://localhost:8080/userrelationship/getbyuserid",
+        url: "http://localhost:8080/userrelationship/getbyusername",
         headers: { Authorization: bearerToken },
         async: false,
         data: {
-            userId: localStorage.getItem("id"),
+            username: username,
         },
     }).done(function (response) {
         if (response != "" && response != null) {
             if (response.statusCode == 200 && response.data != null) {
-                let friendListContent =``;
+                let friendListContent = ``;
+                let friendNumber = 0;
                 response.data.map(function (currentItem, index, arr) {
-                    friendListContent+=`<li>
-                    <img src="images/resources/recent1.jpg" alt="">
+                    if (currentItem.relationshipStatus == "friend") {
+                        friendListContent += `<li>
+                    <img src="images/Userimages/${currentItem.avatar}" alt="">
                     <div class="sugtd-frnd-meta">
-                        <a href="#" title="">${currentItem.friend.name}</a>
-                        <span>1 mutual friend</span>
+                        <a href="timeline.html?username=${currentItem.username}" title="">${currentItem.name}</a>
+                        <span>${currentItem.friendsCapacity} Friends</span>
                         <ul class="add-remove-frnd">
                             <li class="add-tofrndlist"><a class="send-mesg" href="#" title="Send Message"><i class="fa fa-commenting"></i></a></li>
                             <li class="remove-frnd"><a href="#" title="remove friend"><i class="fa fa-user-times"></i></a></li>
                         </ul>
                     </div>
                 </li>`
+                        friendNumber++;
+                    }
                 })
+                $("#friends-number").text("Friend's ("+friendNumber+")");
                 // console.log(friendListContent);
                 let friendList = document.querySelector(".frndz-list");
                 friendList.innerHTML = friendListContent;

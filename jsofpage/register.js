@@ -19,6 +19,7 @@ $(document).ready(function () {
         // get all item in form
         let email = $("#email").val()
         let username = $("#username").val()
+        let userName = $("#user-name").val()
         let password = $("#password").val()
         let confirmPassword = $("#confirmPass").val()
         let alternateAddressCheckbox = $("#alternateAddressCheckbox").prop("checked")
@@ -51,7 +52,21 @@ $(document).ready(function () {
         }
         else {
             usernameWarning.addClass("d-none")
-
+        }
+        // catch exception user-name
+        let userNameWarning = $("#user-name-warning")
+        if (userName == "") {
+            formIsValue = false;
+            userNameWarning.text("The username is not empty!")
+            userNameWarning.removeClass("d-none")
+        } else if (isSpecialCharacter(userName)) {
+            // The username must not have special characters.
+            formIsValue = false;
+            userNameWarning.text("The username must not have special characters.")
+            userNameWarning.removeClass("d-none")
+        }
+        else {
+            userNameWarning.addClass("d-none")
         }
 
         // catch exception confirm-password
@@ -83,7 +98,8 @@ $(document).ready(function () {
                     {
                         "name": username,
                         "password": password,
-                        "email": email
+                        "email": email,
+                        "username":userName
                     }
                 ),
                 contentType: 'application/json',
