@@ -141,11 +141,11 @@ jQuery(document).ready(function ($) {
 		return false;
 	});
 
-	// popup send message
-	$('.send-mesg').on('click', function () {
-		$('.popup-wraper1').addClass('active');
-		return false;
-	});
+	// // popup send message
+	// $('.send-mesg').on('click', function () {
+	// 	$('.popup-wraper1').addClass('active');
+	// 	return false;
+	// });
 	// popup report post
 	$('.bad-report').on('click', function () {
 		$('.popup-wraper3').addClass('active');
@@ -243,7 +243,7 @@ jQuery(document).ready(function ($) {
 
 
 	//--- side message box	
-	$('.friends-chat > li, .chat-users > li, .drops-menu > li ').on('click', function () {
+	$('.friends-chat > li, .chat-users > li, .drops-menu > li, .profile-controls>li>.show-mesg-icon ').on('click', function () {
 		$('.chat-box').addClass("show");
 		return false;
 	});
