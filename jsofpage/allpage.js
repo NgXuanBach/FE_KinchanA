@@ -14,7 +14,7 @@ $(document).ready(function () {
                 user = response.data;
                 document.querySelector(".user-img").innerHTML = `
 					<h5 id="username">${user.name}</h5>
-					<img id = "avatar-dropdowns" src="images/Userimages/${user.avatar}" alt="">
+					<img id = "avatar" src="images/Userimages/${user.avatar}" alt="">
 					<div class="user-setting">
 						<span class="seting-title">User setting <a href="#" title="">see all</a></span>
 						<ul class="log-out">
@@ -25,7 +25,7 @@ $(document).ready(function () {
 						</ul>
 					</div>
                 `
-                $("#avatar-dropdowns").css({
+                $("#avatar").css({
                     maxWidth: 45,
                     maxHeight: 45,
                     // objectFit: 'contain'

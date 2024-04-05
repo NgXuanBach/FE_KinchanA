@@ -22,7 +22,7 @@ $(document).ready(function () {
                             <span>Followers: ${currentItem.followersNumber}</span>
                         </figure>
                         <div class="frnd-meta">
-                            <img src="images/resources/frnd-figure1.jpg" alt="">
+                            <img class="friendAvatarImage" src="images/Userimages/${currentItem.avatar}" alt="">
                             <div class="frnd-name">
                                 <a href="timeline.html?username=${currentItem.username}" title="">${currentItem.name}</a>
                                 <span>${currentItem.address}</span>
@@ -49,6 +49,7 @@ $(document).ready(function () {
                 // console.log(friendListContent);
                 let friendList = document.getElementById("friendList");
                 friendList.innerHTML = friendListContent;
+                $(".friendAvatarImage").css("width", "100");
             } else {
                 console.log("check response userrelationship/getbyfriendid:", response);
             }

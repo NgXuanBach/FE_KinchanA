@@ -15,7 +15,7 @@ $(document).ready(function () {
                 if (result == true) {
                     // Lấy tên file từ element file
                     const fileName = This.val().split('\\').pop();
-                    const file = This.prop('files')[0];; // Get the first selected file
+                    const file = This.prop('files')[0]; // Get the first selected file
                     var formData = new FormData();
                     formData.append("file", file);
                     $.ajax({
@@ -116,18 +116,17 @@ $(document).ready(function () {
                 $("#posts").text(user.postsNumber);
                 $("#followers").text(user.followersNumber);
                 $("#following").text(user.followingNumber);
-                var url = "images/Userimages/" + user.avatar;
-
+                var url = "images/Userimages/" + user.avatar;   
                 $.ajax({
                     url: url,
                     type: 'HEAD',
                     success: function () {
-                        $("#avatar").attr("src", "images/Userimages/" + user.avatar);
+                        $("#avatarr").attr("src","images/Userimages/" + user.avatar);
+                        $("#avatar2").attr("href", "images/Userimages/" + user.avatar)
                     },
                     error: function () {
-                        // File không tồn tại
-                        // Chuyển sang đường dẫn khác
-                        $('#avatar').attr('src', 'images/Userimages/noprofile.jpeg');
+                        $('#avatarr').attr('src', 'images/Userimages/noprofile.jpeg');
+                        $("#avatar2").attr("href", "images/Userimages/noprofile.jpeg/")
                     }
                 });
                 url = "images/Userimages/" + user.coverImage;

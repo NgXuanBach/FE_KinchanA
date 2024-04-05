@@ -545,11 +545,17 @@
 											<div class="col-lg-2 col-md-3">
 												<div class="profile-author">
 													<div class="profile-author-thumb">
-														<img id="avatar" alt="author" src="images/Userimages/noprofile.jpeg">
+														<a class="strip" id="avatar2"
+															href="images/Userimages/bachdeptrai.jpeg" title=""
+															data-strip-group="mygroup"
+															data-strip-group-options="loop: false">
+															<img id="avatarr" alt="author"
+																src="images/Userimages/noprofile.jpeg">
+														</a>
 														<div class="edit-dp">
 															<label class="fileContainer">
 																<i class="fa fa-camera"></i>
-																<input type="file">
+																<input id="fileInput" type="file">
 															</label>
 														</div>
 													</div>
@@ -588,35 +594,6 @@
 								<div class="col-lg-3">
 									<aside class="sidebar static">
 										<div class="widget">
-											<h4 class="widget-title">Shortcuts</h4>
-											<ul class="naves">
-												<li>
-													<i class="fa-solid fa-calendar"></i>
-													<a href="index.html" title="">News feed</a>
-												</li>
-												<li>
-													<i class="fa-solid fa-user"></i>
-													<a href="about.html" title="">My Profile</a>
-												</li>
-												<li>
-													<i class="fa-solid fa-users"></i>
-													<a href="timeline-friends.html" title="">Friends</a>
-												</li>
-												<li>
-													<i class="fa-regular fa-images"></i>
-													<a href="timeline-photos.html" title="">Images</a>
-												</li>
-												<li>
-													<i class="fa-solid fa-message"></i>
-													<a href="chat-messenger.html" title="">Messages</a>
-												</li>
-												<li>
-													<i class="fa-solid fa-bell"></i>
-													<a href="notifications.html" title="">Notifications</a>
-												</li>
-											</ul>
-										</div><!-- Shortcuts -->
-										<div class="widget">
 											<h4 class="widget-title">Profile intro</h4>
 											<ul class="short-profile">
 												<li>
@@ -643,41 +620,7 @@
 											<div class="row">
 												<div class="col-lg-6">
 													<div class="align-left">
-														<h5>Photos <span>62</span></h5>
-													</div>
-												</div>
-												<div class="col-lg-6">
-													<div class="row merged20">
-														<div class="col-lg-7 col-md-7 col-sm-7">
-															<form method="post">
-																<input type="text" placeholder="Search Photo">
-																<button type="submit"><i
-																		class="fa fa-search"></i></button>
-															</form>
-														</div>
-														<div class="col-lg-4 col-md-4 col-sm-4">
-															<div class="select-options">
-																<select class="select">
-																	<option>Sort by</option>
-																	<option>A to Z</option>
-																	<option>See All</option>
-																	<option>Newest</option>
-																	<option>oldest</option>
-																</select>
-															</div>
-														</div>
-														<div class="col-lg-1 col-md-1 col-sm-1">
-															<div class="option-list">
-																<i class="fa fa-ellipsis-v"></i>
-																<ul>
-																	<li class="active"><i class="fa fa-check"></i><a
-																			title="" href="#">Show Public</a></li>
-																	<li><a title="" href="#">Show only Friends</a></li>
-																	<li><a title="" href="#">Hide all Posts</a></li>
-																	<li><a title="" href="#">Mute Notifications</a></li>
-																</ul>
-															</div>
-														</div>
+														<h5>Photos <span id="imagesCapacity">62</span></h5>
 													</div>
 												</div>
 											</div>
@@ -685,17 +628,6 @@
 									</div><!-- title block -->
 									<div class="central-meta">
 										<div class="row merged5">
-											<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-												<div class="item-box">
-													<div class="item-upload album">
-														<i class="fa fa-plus-circle"></i>
-														<div class="upload-meta">
-															<h5>Upload photo or album</h5>
-															<span>its only take a few seconds!</span>
-														</div>
-													</div>
-												</div>
-											</div>
 											<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
 												<div class="item-box">
 													<a class="strip" href="images/resources/photo-101.jpg" title=""
@@ -1036,7 +968,7 @@
 						<textarea placeholder="Write Message"></textarea>
 						<button type="submit" class="main-btn">Send</button>
 					</form>
-					
+
 
 				</div>
 			</div>
@@ -1092,11 +1024,12 @@
 	</div><!-- report popup -->
 
 	<script src="https://kit.fontawesome.com/bdfcdd3133.js" crossorigin="anonymous"></script>
-		<script src="js/main.min.js"></script>
+	<script src="js/main.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/6.0.0/bootbox.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/6.0.0/bootbox.js"></script>
 	<script src="jsofpage/allpage.js"></script>
 	<script src="jsofpage/profile.js"></script>
+	<script src="jsofpage/timline-photos.js"></script>
 	<script src="js/script.js"></script>
 </body>
 
